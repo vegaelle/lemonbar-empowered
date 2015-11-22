@@ -49,17 +49,20 @@ file (in YAML for this exemple):
         icon_sound: Ô
     styles:
         cpu:
-            foreground: #39496
-            background: #002b36
+            foreground: {blue}
+            background: {black}
         classic:
-            foreground: #39496
-            background: #002b36
+            foreground: {black}
+            background: {blue}
     plugins:
         hour:
+            plugin: command
             tick: 60
             icon: {icon_clock}
             command: date '%a %d %b %Y'
-            background_color: {lightred}
+            options:
+                nice: 20
+                class: classic
         volume:
             plugin: volume
             signal: 1
