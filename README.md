@@ -47,23 +47,38 @@ file (in YAML for this exemple):
         right_separator_light: 
         icon_clock: Õ
         icon_sound: Ô
-    segments:
+    styles:
+        cpu:
+            foreground: #39496
+            background: #002b36
+        classic:
+            foreground: #39496
+            background: #002b36
+    plugins:
         hour:
             tick: 60
             icon: {icon_clock}
             command: date '%a %d %b %Y'
             background_color: {lightred}
         volume:
+            plugin: volume
             signal: 1
             icon: {icon_sound}
-            plugin: volume
             card: 0
         spacer:
+            plugin: spacer,
             tick: 0
-            text: My powered lemonbar
-            type: spacer
+            options:
+                class: classic
+                widescreen: true
+                text: My powered lemonbar
+        conky:
+            plugin: conky
+            options:
+                eth: eth2
+                wlan: wlan0
         workspaces:
-            type: conky
+            plugin: i3-workspaces
 
 ## Plugins
 
