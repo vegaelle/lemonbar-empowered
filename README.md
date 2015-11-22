@@ -35,6 +35,7 @@ file (in YAML for this exemple):
     colors:
         black: #000000
         white: #FFFFFF
+        grey: #DDDDDD
         blue: #0000FF
         red:  #FF0000
         lightred: #AA0000
@@ -48,46 +49,67 @@ file (in YAML for this exemple):
     icons:
         clock: Õ
         sound: Ô
+        window: ß
 
     styles:
         default:
             background: black
             foreground: white
-        cpu:
-            foreground: blue
-            background: black
         classic:
             foreground: black
             background: blue
+        urgent:
+            foreground: black
+            background: lightred
+        disabled:
+            foreground: grey
+            background: black
+        cpu:
+            foreground: blue
+            background: black
 
     plugins:
-        hour:
-            plugin: command
-            tick: 60
-            icon: clock
-            command: date '%a %d %b %Y'
-            options:
-                nice: 20
-                class: classic
-        volume:
-            plugin: volume
-            signal: 1
-            icon: sound
-            card: 0
-        spacer:
-            plugin: spacer,
-            tick: 0
-            options:
-                class: classic
-                widescreen: true
-                text: My powered lemonbar
-        conky:
-            plugin: conky
-            options:
-                eth: eth2
-                wlan: wlan0
-        workspaces:
-            plugin: i3-workspaces
+
+        left:
+
+          workspaces:
+              plugin: i3-workspaces
+
+          window:
+              plugin: window
+              truncate: 20
+              icon: window
+
+        right:
+
+          hour:
+              plugin: command
+              tick: 60
+              icon: clock
+              command: date '%a %d %b %Y'
+              options:
+                  nice: 20
+                  class: classic
+
+          volume:
+              plugin: volume
+              signal: 1
+              icon: sound
+              card: 0
+
+          spacer:
+              plugin: spacer,
+              tick: 0
+              options:
+                  class: classic
+                  widescreen: true
+                  text: My powered lemonbar
+
+          conky:
+              plugin: conky
+              options:
+                  eth: eth2
+                  wlan: wlan0
 
 ## Plugins
 
