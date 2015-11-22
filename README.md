@@ -40,17 +40,6 @@ file (in YAML for this exemple):
         red:  #FF0000
         lightred: #AA0000
 
-    separators:
-        left: 
-        left_light: 
-        right: 
-        right_light: 
-
-    icons:
-        clock: Õ
-        sound: Ô
-        window: ß
-
     styles:
         default:
             background: black
@@ -67,6 +56,17 @@ file (in YAML for this exemple):
         cpu:
             foreground: blue
             background: black
+
+    separators:
+        left: 
+        left_light: 
+        right: 
+        right_light: 
+
+    icons:
+        clock: Õ
+        sound: Ô
+        window: ß
 
     plugins:
 
