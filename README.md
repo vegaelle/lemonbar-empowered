@@ -53,9 +53,13 @@ file (in YAML for this exemple):
         disabled:
             foreground: grey
             background: black
-        cpu:
+        monitoring:
             foreground: blue
             background: black
+        monitoring_urgent:
+            foreground: black
+            background: red
+            separator: black
 
     separators:
         left: 
@@ -77,7 +81,7 @@ file (in YAML for this exemple):
             window:
                 plugin: window
                 truncate: 20
-                options:
+                q
                     icon: window
 
         right:
@@ -122,11 +126,13 @@ example, let’s say it’s a plugin which returns a list of CPU values):
     cpu0:
         icon: gear
         text: 2%
-        class: cpu
+        group: cpu
+        style: monitoring
     cpu1:
         icon: gear
         text: 81%
-        class: urgent
+        group: cpu
+        style: monitoring_urgent
 
 ## Signals
 
