@@ -78,11 +78,13 @@ example, let’s say it’s a plugin which returns a list of CPU values):
         text: 2%
         foreground: {white}
         background: {cyan}
+        class: cpu
     cpu1:
         icon: {icon_gear}
         text: 81%
         foreground: {red}
         background: {cyan}
+        class: cpu
 
 ## Signals
 
