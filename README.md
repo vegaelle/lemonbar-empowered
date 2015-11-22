@@ -71,47 +71,45 @@ file (in YAML for this exemple):
     plugins:
 
         left:
+            workspaces:
+                plugin: i3-workspaces
 
-          workspaces:
-              plugin: i3-workspaces
-
-          window:
-              plugin: window
-              truncate: 20
-              options:
-                  icon: window
+            window:
+                plugin: window
+                truncate: 20
+                options:
+                    icon: window
 
         right:
+            hour:
+                plugin: command
+                tick: 60
+                options:
+                    command: date '%a %d %b %Y'
+                    icon: clock
+                    nice: 20
+                    class: classic
 
-          hour:
-              plugin: command
-              tick: 60
-              options:
-                  command: date '%a %d %b %Y'
-                  icon: clock
-                  nice: 20
-                  class: classic
+            volume:
+                plugin: volume
+                signal: 1
+                options:
+                    icon: sound
+                    card: 0
 
-          volume:
-              plugin: volume
-              signal: 1
-              options:
-                  icon: sound
-                  card: 0
+            spacer:
+                plugin: spacer,
+                tick: 0
+                options:
+                    class: classic
+                    widescreen: true
+                    text: My powered lemonbar
 
-          spacer:
-              plugin: spacer,
-              tick: 0
-              options:
-                  class: classic
-                  widescreen: true
-                  text: My powered lemonbar
-
-          conky:
-              plugin: conky
-              options:
-                  eth: eth2
-                  wlan: wlan0
+            conky:
+                plugin: conky
+                options:
+                    eth: eth2
+                    wlan: wlan0
 
 ## Plugins
 
