@@ -1,11 +1,12 @@
-# lemonbar-empowered
+# lemonbarista
 
-A plugin for easy Powerline bars creation for LemonBar.
+A tool to easily feed LemonBar with a powerline style.
+
 
 # Requirements
 
-lemonbar-empowered is written in Python3.4, and should work since Python3.3.
-Since Lemonbar-empowered is a wrapper around
+lemonbarista is written in Python3.4, and should work since Python3.3.
+Since Lemonbarista is a wrapper around
 [LemonBar](https://github.com/LemonBoy/bar), it is also a requirement.
 
 Additional programs may be required for some plugins.
@@ -16,14 +17,14 @@ Additional programs may be required for some plugins.
 
 # Usage
 
-After installation, you just have to launch `lemonbar-empowered`, which will
-search for a config file named `$(HOME)/.config/lemonbar-empowered/config.yaml`.
+After installation, you just have to launch `lemonbarista`, which will
+search for a config file named `$(HOME)/.config/lemonbarista/config.yaml`.
 The syntax for the config file follows:
 
 # Configuration file
 
 A single file handles the bar contents and settings. It can be written in YAML
-or JSON. Lemonbar-empowered can know the config type by the `-t yaml|json`
+or JSON. Lemonbarista can know the config type by the `-t yaml|json`
 option, or by the file extension. Here is the basic syntax for a simple config
 file (in YAML for this exemple):
 
@@ -92,7 +93,7 @@ file (in YAML for this exemple):
                     command: date '%a %d %b %Y'
                     icon: clock
                     nice: 20
-                    class: classic
+                    style: classic
 
             volume:
                 plugin: volume
@@ -105,7 +106,7 @@ file (in YAML for this exemple):
                 plugin: spacer,
                 tick: 0
                 options:
-                    class: classic
+                    style: classic
                     widescreen: true
                     text: My powered lemonbar
 
@@ -118,7 +119,7 @@ file (in YAML for this exemple):
 ## Plugins
 
 Plugins can be used to generate one or more segments. Those have to be inside
-the `$(HOME)/.config/lemonbar-empowered/plugins` directory, and be executable.
+the `$(HOME)/.config/lemonbarista/plugins` directory, and be executable.
 
 The plugins have to return JSON or YAML lists of segments, like this (for the
 example, let’s say it’s a plugin which returns a list of CPU values):
@@ -141,5 +142,5 @@ given interval. You can define a signal number in a segment definition. This
 number will be added to SIGRTMIN to catch incoming signals. For the previous
 example, you can order a refresh of the volume segment with:
 
-    pkill -SIGRTMIN+1 lemonbar-empowered
+    pkill -SIGRTMIN+1 lemonbarista
 
