@@ -54,7 +54,7 @@ file (in YAML for this exemple):
             command: date '%a %d %b %Y'
             background_color: {lightred}
         volume:
-            tick: 3
+            signal: 1
             icon: {icon_sound}
             script: volume
             card: 0
@@ -65,4 +65,31 @@ file (in YAML for this exemple):
         workspaces:
             type: conky
 
+## Scripts
+
+Scripts can be used to generate one or more segments. Those have to be inside
+the `$(HOME)/.config/lemonbar-empowered/scripts` directory, and be executable.
+
+The scripts have to return JSON or YAML lists of segments, like this (for the
+example, let’s say it’s a script which returns a list of CPU values):
+
+    cpu0:
+        icon: {icon_gear}
+        text: 2%
+        foreground: {white}
+        background: {cyan}
+    cpu1:
+        icon: {icon_gear}
+        text: 81%
+        foreground: {red}
+        background: {cyan}
+
+## Signals
+
+Sometimes, the refresh of a segment should be done by request, and not in a
+given interval. You can define a signal number in a segment definition. This
+number will be added to SIGRTMIN to catch incoming signals. For the previous
+example, you can order a refresh of the volume segment with:
+
+    pkill -SIGRTMIN+1 lemonbar-empowered
 
