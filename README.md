@@ -78,24 +78,26 @@ file (in YAML for this exemple):
           window:
               plugin: window
               truncate: 20
-              icon: window
+              options:
+                  icon: window
 
         right:
 
           hour:
               plugin: command
               tick: 60
-              icon: clock
-              command: date '%a %d %b %Y'
               options:
+                  command: date '%a %d %b %Y'
+                  icon: clock
                   nice: 20
                   class: classic
 
           volume:
               plugin: volume
               signal: 1
-              icon: sound
-              card: 0
+              options:
+                  icon: sound
+                  card: 0
 
           spacer:
               plugin: spacer,
