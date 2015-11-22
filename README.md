@@ -120,17 +120,13 @@ The plugins have to return JSON or YAML lists of segments, like this (for the
 example, let’s say it’s a plugin which returns a list of CPU values):
 
     cpu0:
-        icon: {icon_gear}
+        icon: gear
         text: 2%
-        foreground: {white}
-        background: {cyan}
         class: cpu
     cpu1:
-        icon: {icon_gear}
+        icon: gear
         text: 81%
-        foreground: {red}
-        background: {cyan}
-        class: cpu
+        class: urgent
 
 ## Signals
 
