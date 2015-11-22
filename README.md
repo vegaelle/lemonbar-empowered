@@ -81,7 +81,7 @@ file (in YAML for this exemple):
             window:
                 plugin: window
                 truncate: 20
-                q
+                options:
                     icon: window
 
         right:
