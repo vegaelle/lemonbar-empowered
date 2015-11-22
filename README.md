@@ -31,34 +31,40 @@ file (in YAML for this exemple):
         font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
         icon_font: -xos4-terminusicons2mono-medium-r-normal--12-120-72-72-m-60-iso8859-1
         default_tick: 10
-        background_color: {background}
-        foreground_color: {foreground}
 
     colors:
-        foreground: #39496
-        background: #002b36
+        black: #000000
+        white: #FFFFFF
         blue: #0000FF
         red:  #FF0000
         lightred: #AA0000
-    chars:
-        left_separator: 
-        left_separator_light: 
-        right_separator: 
-        right_separator_light: 
-        icon_clock: Õ
-        icon_sound: Ô
+
+    separators:
+        left: 
+        left_light: 
+        right: 
+        right_light: 
+
+    icons:
+        clock: Õ
+        sound: Ô
+
     styles:
+        default:
+            background: black
+            foreground: white
         cpu:
-            foreground: {blue}
-            background: {black}
+            foreground: blue
+            background: black
         classic:
-            foreground: {black}
-            background: {blue}
+            foreground: black
+            background: blue
+
     plugins:
         hour:
             plugin: command
             tick: 60
-            icon: {icon_clock}
+            icon: clock
             command: date '%a %d %b %Y'
             options:
                 nice: 20
@@ -66,7 +72,7 @@ file (in YAML for this exemple):
         volume:
             plugin: volume
             signal: 1
-            icon: {icon_sound}
+            icon: sound
             card: 0
         spacer:
             plugin: spacer,
